@@ -7,6 +7,9 @@ import routes from './router/router'
 import axios from './service/http'
 import MintUI from 'mint-ui'
 import 'vant/lib/vant-css/index.css'
+import 'mint-ui/lib/style.css'
+import './config/rem'
+
 Vue.use(VueRouter)
 Vue.use(MintUI)
 const router = new VueRouter({

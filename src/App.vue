@@ -12,6 +12,6 @@
 
 <style>
   html {
-    font-size: 25.87px;
+    font-family: 微软雅黑;
   }
 </style>

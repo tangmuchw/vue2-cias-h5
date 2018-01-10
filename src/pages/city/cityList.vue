@@ -54,11 +54,9 @@
       }
     },
     created: function () {
-      this.$api.get('topics', null, r => {
-        console.log(r)
-      })
-     
-     
+      // this.$api.get('topics', null, r => {
+      //   console.log(r)
+      // })
       'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').forEach(initial => {
         let cells = NAMES.filter(name => name[0] === initial)
         this.alphabet.push({
