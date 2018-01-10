@@ -1,0 +1,156 @@
+{
+  "status": "0",
+  "error": "正常",
+  "data": [
+    {
+      "cityid": 340800,
+      "cityname": "安庆市",
+      "pid": 340000,
+      "adminlevel": "",
+      "pinyin": "anqingshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 220100,
+      "cityname": "长春市",
+      "pid": 220000,
+      "adminlevel": "",
+      "pinyin": "changchunshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 320400,
+      "cityname": "常州市",
+      "pid": 320000,
+      "adminlevel": "",
+      "pinyin": "changzhoushi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 510100,
+      "cityname": "成都市",
+      "pid": 510000,
+      "adminlevel": "",
+      "pinyin": "chengdoushi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 460100,
+      "cityname": "海口市",
+      "pid": 460000,
+      "adminlevel": "",
+      "pinyin": "haikoushi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 330400,
+      "cityname": "嘉兴市",
+      "pid": 330000,
+      "adminlevel": "",
+      "pinyin": "jiaxingshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 360100,
+      "cityname": "南昌市",
+      "pid": 360000,
+      "adminlevel": "",
+      "pinyin": "nanchangshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 320100,
+      "cityname": "南京市",
+      "pid": 320000,
+      "adminlevel": "",
+      "pinyin": "nanjingshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 320600,
+      "cityname": "南通市",
+      "pid": 320000,
+      "adminlevel": "",
+      "pinyin": "nantongshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 330200,
+      "cityname": "宁波市",
+      "pid": 330000,
+      "adminlevel": "",
+      "pinyin": "ningboshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 370200,
+      "cityname": "青岛市",
+      "pid": 370000,
+      "adminlevel": "",
+      "pinyin": "qingdaoshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 350500,
+      "cityname": "泉州市",
+      "pid": 350000,
+      "adminlevel": "",
+      "pinyin": "quanzhoushi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 330800,
+      "cityname": "衢州市",
+      "pid": 330000,
+      "adminlevel": "",
+      "pinyin": "quzhoushi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 330600,
+      "cityname": "绍兴市",
+      "pid": 330000,
+      "adminlevel": "",
+      "pinyin": "shaoxingshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    },
+    {
+      "cityid": 321100,
+      "cityname": "镇江市",
+      "pid": 320000,
+      "adminlevel": "",
+      "pinyin": "zhenjiangshi",
+      "level": 2,
+      "lat": "",
+      "lon": ""
+    }
+  ]
+}

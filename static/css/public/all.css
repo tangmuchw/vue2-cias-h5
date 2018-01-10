@@ -1,0 +1,106 @@
+.container {
+  width: 100%;
+  height: auto;
+  display: table;
+  background: #fff;
+}
+
+a {
+  color: #e23f3d;
+}
+
+.nav {
+  width: 17.664rem;
+  height: 2.218667rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav .nav-item {
+  width: 3.22rem;
+  height: 2.218667rem;
+  text-align: center;
+  background: #fff;
+  font-size: 0.512rem;
+}
+
+body {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+
+/* svg loading */
+
+.loader {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  padding: 1rem 0;
+}
+
+.wx_hide {
+  display: none!important;
+}
+
+.hide_l {
+  display: none
+}
+
+
+/*
+  Set the color of the icons
+*/
+
+svg path,
+svg rect {
+  fill: #FFCC00;
+}
+
+.body_nothing {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.layoutL::-webkit-scrollbar {
+  height: 0px;
+}
+
+
+/* 排片加载图 */
+
+.rowPiece {
+  width: 100%;
+  text-align: center;
+}
+
+.rowPiece img {
+  width: 50%;
+}
+
+.rowPiece p {
+  color: #989898;
+  margin-top: 0.2rem;
+  font-size: 14px;
+}
+
+.boder_red {
+  border: 1px solid #e23f3d;
+}
+
+.font_red {
+  color: #e23f3d!important;
+}
+
+.bf_red {
+  background: #e23f3d!important;
+  color: #fff!important;
+}
+
