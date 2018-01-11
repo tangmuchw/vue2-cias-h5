@@ -5,6 +5,9 @@
         <img v-lazy="image" />
       </van-swipe-item>
     </van-swipe>
+ 
+      <!-- <img v-for="img in imageList" v-lazy="img"> -->
+  
   </div>
 </template>
 
@@ -16,27 +19,23 @@
   } from 'vant'
 
   export default {
+    props:['bannerImages'],
     data() {
       return {
-        images: [
-          'https://img.yzcdn.cn/2.jpg',
-          'https://img.yzcdn.cn/2.jpg'
-        ]
+        images: this.bannerImages
       }
     },
     components: {
       [Swipe.name]: Swipe,
       [SwipeItem.name]: SwipeItem
-
     }
   }
 
 </script>
 <style scoped>
-.banner img{
-  width: 100%;
-   height: 10.794667rem;
-}
-
+  .banner img {
+    width: 100%;
+    height: 10.794667rem;
+  }
 
 </style>

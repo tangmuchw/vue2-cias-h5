@@ -1,137 +1,147 @@
 <template>
-  <div class="scroller">
-    <div class="content">
-      <!-- <slot name="promItem"></slot> -->
-      <ul class="hasCover" v-if="type === 'hasCover'">
-        <li v-for="item in items">
-          <router-link :to="'subject/' + item.id" append>
-            <img v-if="item.images" :src="item.images.large" alt="">
-            <span class="title">{{item.title}}</span>
-          </router-link>
-        </li>
-      </ul>
-      <ul class="onlyString" v-if="type === 'onlyString'">
-        <li v-for="item in items" style="border-color: #FFAC2D;">
-          <a :href="item.href" v-if="!item.line" :style="{color: item.color}">{{item.title}}</a>
-        </li>
-      </ul>
-    </div>
+  <div class="myScroller">
+    <van-row class="hot-scroller">
+      <van-col offset="1">
+        <div class="scroller">
+          <div class="content">
+            <van-row gutter="5">
+              <van-col span="24">
+                <swiper :options="swiperOption">
+                  <swiper-slide v-for="(item, index) in items" :key="index">
+                    <router-link :to="'subject/' + item.id" append>
+                      <section class="sec-pic">
+                        <img v-if="item.images" v-lazy="item.images" alt="">
+                      </section>
+                      <section class="sec-name">
+                        <p class="item-name">{{item.title}}</p>
+                      </section>
+                    </router-link>
+                  </swiper-slide>
+                </swiper>
+              </van-col>
+            </van-row>
+          </div>
+        </div>
+      </van-col>
+    </van-row>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'scroller',
-  // props: ['title', 'type', 'items'],
-  data () {
-    return {
-      type: 'hasCover',
-      items:[
-          {
-            id: 1,
-            images:'',
-            title: '前任三'
-          }
-      ]
+  import {
+    Row,
+    Col,
+    Lazyload
+  } from 'vant'
+  import {
+    swiper,
+    swiperSlide
+  } from 'vue-awesome-swiper'
+  import 'swiper/dist/css/swiper.css'
 
+  export default {
+    name:'carrousel',
+    props: ['dataImages'],
+    data() {
+      return {
+        items: this.dataImages,
+        swiperOption: {
+          // notNextTick是一个组件自有属性，如果notNextTick设置为true，组件则不会通过NextTick来实例化swiper，也就意味着你可以在第一时间获取到swiper对象，假如你需要刚加载遍使用获取swiper对象来做什么事，那么这个属性一定要是true
+          notNextTick: true,
+          slidesPerView: 3,
+          roundLengths: true,
+          width: 350,
+          slidePreGroup: 4,
+          spaceBetween: 20,
+          centeredSlides: true,
+          centeredSlides: false,
+          setWrapperSize: false,
+          setWrapperSize: true,
+          reventClicks: false
+          // pagination: {
+          //   el: '.swiper-pagination',
+          //   clickable: true
+          // }
+        }
+      }
+    },
+
+    components: {
+      [Row.name]: Row,
+      [Col.name]: Col,
+      swiper,
+      swiperSlide
+    },
+     // 如果你需要得到当前的swiper对象来做一些事情，你可以像下面这样定义一个方法属性来获取当前的swiper对象，同时notNextTick必须为true
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.swiper
+      }
+    },
+     mounted() {
+      // 然后你就可以使用当前上下文内的swiper对象去做你想做的事了
+   
+      // console.log('this is current swiper instance object', this.swiper)
+      // this.swiper.slideTo(3, 1000, false)
     }
   }
-}
+
 </script>
-
-<style lang="scss" scoped>
-.scroller {
-  padding-top: 1rem;
-}
-
-.header {
-  height: 2.6rem;
-  line-height: 2.6rem;
-  padding: 0 1.6rem;
-
-  a {
-    float: right;
-    font-size: 1.44rem;
-    &:last-child {
-      color: #42bd56;
-    }
+<style scoped>
+  .hot-scroller {
+    overflow-x: scroll;
+    white-space: nowrap;
+    width: 100%;
+    height: 7.9rem;
   }
 
-  h2 {
-    display: inline-block;
+  .scroller img {
+    width: 4.48rem;
+    height: 6.741333rem;
   }
-}
 
-.content {
-  box-sizing: content-box;
-
-  ul {
-    padding: 0.8rem 0;
+  .sec-pic {
+    width: 4.48rem;
+    height: 6.741333rem;
+    background: #ccc;
+    border-radius: 0.256rem;
+    overflow: hidden;
   }
-}
 
-.hasCover {
-  overflow-x: auto;
-  white-space: nowrap;
-  text-align: center;
+  .sec-name {
+    margin-top: 0.256rem;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 4rem;
+  }
 
-  .title {
-    display: block;
-    max-width: 100%;
-    margin-top: 1rem;
-    line-height: 1.6rem;
-    font-size: 1.6rem;
-    color: #111;
+  .item-name {
+    max-width: 61%;
+    text-align: center;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
-    word-wrap: normal;
-  }
-
-  li {
-    display: inline-block;
-    width: 10rem;
-    margin-left: 1rem;
-  }
-
-  li:first-child {
-    padding-left: 0.8rem;
-  }
-
-  img {
-    height: 15rem;
-  }
-}
-
-.onlyString {
-  overflow-x: auto;
-  white-space: nowrap;
-
-  li {
-    display: inline-block;
-    margin: 0 0 0.8rem 1.6rem;
-    font-size: 1.6rem;
-    border: solid 0.1rem;
-    border-radius: 0.4rem;
-    vertical-align: middle;
-  }
-
-  a {
-    height: 5rem;
-    line-height: 5rem;
-    padding: 0 2.4rem;
-    letter-spacing: 0.16rem;
-    overflow: auto;
-    display: block;
-    text-align: center;
-  }
-
-  li:empty {
-    width: 100%;
-    display: block;
-    height: 0.1rem;
-    border: 0;
+    color: #b2b2b2;
+    font-size: 0.554667rem;
     margin: 0;
   }
-}
+
+  .rightIconSize {
+    width: 0.3rem;
+    height: 0.6rem;
+  }
+
+  .swiper-container {
+    height: auto!important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 </style>

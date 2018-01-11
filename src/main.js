@@ -9,9 +9,14 @@ import MintUI from 'mint-ui'
 import 'vant/lib/vant-css/index.css'
 import 'mint-ui/lib/style.css'
 import './config/rem'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
 
+
+Vue.use(VueAwesomeSwiper)
 Vue.use(VueRouter)
 Vue.use(MintUI)
+
+
 const router = new VueRouter({
     routes,
     mode: 'history'
